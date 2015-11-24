@@ -74,7 +74,7 @@ def main():
             print(num1, oper, num2, '= -', hex_total)
 
         hex_total = conv2hex(dec2hex, dec_total)
-        print(num1, oper, num2, '=', hex_total)
+        print(split_lst[0], oper, split_lst[2], '=', hex_total)
         ans = input('Enter another ( y or n)? ')
 
 main()
