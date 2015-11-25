@@ -1,0 +1,51 @@
+
+1. (15 pts.) Write a Python program that uses dictionaries to implement a hexadecimal number calculator. The program should repeatedly prompt the user to enter an arithmetic expression involving hexadecimal numbers and will then calculate and display the hexadecimal result. The calculator should allow for these operations: +, -, *, //, and %. The operands of each expression should be positive hexadecimal numbers. Note: The result of using subtraction could possibly be a negative hexadecimal number.
+The hexadecimal number system is a base 16 number system. There are 16 digits used (0-9, and A,B,C,D,E,F), where A-F are digits used to represent the decimal values 10-15. Each digit of a hex number, going from right to left, represents the number of each successively higher power of sixteen that is part of the original hex number. For example: The hex number 2ADF means F (decimal 15) 1’s, D (decimal 13) 16’s, A (decimal 10) 256’s, and two 4096’s (adds up to 10,975, decimal). Note: 1  160 ,
+16 161, 256 162, and 4096 163 .
+Program requirements:
+1. You cannot use any special Python functions to convert from hexadecimal to decimal (e.g., it is possible to do this with the int function – do not use the int function in your program) or from decimal to hexadecimal. Use the dictionaries and functions described next to do the conversions.
+2. You need to use two dictionaries:
+ hex2dec – a dictionary with key values the 16 characters of the hexadecimal number
+system, each associated with its associated decimal integer value (you can include both
+uppercase and lowercase key values in the dictionary for the letter digits, if you like)
+ dec2hex – a dictionary with key values the decimal integer values of the 16
+hexadecimal digits, each associated with the corresponding string hexadecimal digit.
+3. You need to include these functions:
+ conv2dec – takes via arguments a string containing a valid hexadecimal number and the hex2dec dictionary and returns the decimal value of the hexadecimal number as an integer.
+ conv2hex – takes via arguments a decimal integer value and the dec2hex dictionary and returns the hexadecimal value of the integer as a string.
+ main – this is the driver function for the program. It takes no arguments, but contains the two dictionaries and repeatedly does these actions:
+o Prompts for and reads an arithmetic expression, checking the input for valid numerical operands and for a valid operator. Assume that the user will enter the expressionintheformhex_num_1 oper hex_num_2(i.e.,theoperis surrounded by blanks). Allow the user to enter the letter digits in the hexadecimal number either in uppercase or lowercase.
+o Does the calculation using the required functions given above. o Displays the result.
+Here is an example of output from running the program (user input in bold):
+>>> main()
+Hexadecimal Calculator
+Enter your calculation in the form hex_num_1 oper hex_num_2
+where hex_num_1 and hex_num_1 are hexadecimal numbers
+and where oper is one of these operators: +,-,*,//,% Enter calculation: 1a + 2f
+1a + 2f = 49
+Enter another (y or n)? y
+Enter calculation: 1a - 2f
+1a - 2f = -15
+Enter another (y or n)? y
+Enter calculation: 2f - 1a
+2f - 1a = 15
+Enter another (y or n)? y
+Enter calculation: 1a * 2f
+1a * 2f = 4C6
+Enter another (y or n)? y
+Enter calculation: 2f // 1a
+2f // 1a = 1
+Enter another (y or n)? y
+Enter calculation: 2f % 1a
+2f % 1a = 15
+Enter another (y or n)? y
+Enter calculation: 2az + 123
+First number not hexadecimal
+Enter calculation: 2af + 12p
+Second number not hexadecimal
+Enter calculation: 2af # 123
+Invalid operator
+Enter calculation: 2af + 123
+2af + 123 = 3D2
+Enter another (y or n)? n
+>>>
